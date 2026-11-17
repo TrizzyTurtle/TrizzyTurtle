@@ -137,9 +137,20 @@ def check(cx, cy, col):
 # ----------------------------------------------------------------------------
 # Wide banners (featured projects)
 # ----------------------------------------------------------------------------
-def banner(title, tag, tags, a1, a2, art, label, extra_defs=""):
+def status_pill(x, y, label):
+    """A green 'live' tag with a pulsing dot."""
+    w = round(len(label) * 12 * 0.66 + 44)
+    return (f'<g transform="translate({x},{y})">'
+            f'<rect width="{w}" height="28" rx="14" fill="{GREEN}" fill-opacity=".1" stroke="{GREEN}" stroke-opacity=".45"/>'
+            f'<circle cx="17" cy="14" r="7" fill="{GREEN}" opacity=".2"/><circle class="pulse" cx="17" cy="14" r="4" fill="{GREEN}"/>'
+            f'{text(32, 18.5, label, 12, GREEN, 600, "m", extra="letter-spacing=\'.8\'")}</g>')
+
+
+def banner(title, tag, tags, a1, a2, art, label, extra_defs="", status=None):
     w, h = 1200, 360
     body = [pill(56, 46)]
+    if status:
+        body.append(status_pill(207, 46, status))
     body.append(text(54, 138, title, 54, INK, 700, extra="letter-spacing='-1'"))
     body.append('<rect x="56" y="160" width="60" height="5" rx="2.5" fill="url(#acc)"/>')
     for i, line in enumerate(tag):
@@ -538,7 +549,8 @@ def main():
     files["apexbot.svg"] = banner(
         "ApexBot", ["A company portal for AI agent workspaces.", "Teams sign in, pair a server and run bots."],
         ["Next.js", "TypeScript", "Postgres", "Playwright"], *a, art_apexbot(*a),
-        "ApexBot: a company portal for AI agent workspaces. Private repository.")
+        "ApexBot: a company portal for AI agent workspaces. In production with over 100 internal users. Private repository.",
+        status="IN PRODUCTION · 100+ USERS")
 
     a = ("#ff5fa2", "#ffb057")
     art, defs = art_apexsocial(*a)

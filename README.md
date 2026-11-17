@@ -6,9 +6,9 @@ Most of my work lives in private repositories, so this page shows what each proj
 
 ## Featured work
 
-<img src="assets/apexbot.svg" width="100%" alt="ApexBot: a company portal for AI agent workspaces. Private repository.">
+<img src="assets/apexbot.svg" width="100%" alt="ApexBot: a company portal for AI agent workspaces. In production with over 100 internal users. Private repository.">
 
-**ApexBot** is a company portal where each consultant signs in, connects their own AI agent workspace server, and manages the bots that run on it.
+**ApexBot** is a company portal where each consultant signs in, connects their own AI agent workspace server, and manages the bots that run on it. It is in production and used internally by more than 100 people.
 
 - Email sign-in with one-time codes, invitations, and owner, admin and member roles.
 - A workspace is paired with a code or link, then checked live: is it reachable, is it the same server, and does it still accept the connection.

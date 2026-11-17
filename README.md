@@ -1,7 +1,5 @@
 <img src="assets/header.svg" width="100%" alt="Tristan. I build AI agent tools, automation and full-stack products.">
 
-<img src="assets/contributions.svg" width="100%" alt="942 contributions in the last year, across public and private repositories.">
-
 I'm Tristan. I build AI agent tools, automation and full-stack products: web apps in TypeScript and Next.js, backends in Python, and desktop apps in Swift and Electron.
 
 Most of my work lives in private repositories, so this page shows what each project does rather than its code.
